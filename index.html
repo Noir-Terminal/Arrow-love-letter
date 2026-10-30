@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Letter Animation | @coding.stella</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="bg-hearts"></div>
+
+  <div id="envelope-screen">
+    <svg id="envelope" viewBox="0 0 240 170" aria-label="Letter">
+      <defs>
+        <clipPath id="env-clip">
+          <rect x="6" y="6" width="228" height="150" rx="10" />
+        </clipPath>
+      </defs>
+      <g clip-path="url(#env-clip)">
+        <rect x="6" y="6" width="228" height="150" fill="#fbf5f1" />
+        <!-- side folds -->
+        <path d="M6 6 L112 88 L6 156 Z" fill="#f6ebe6" />
+        <path d="M234 6 L128 88 L234 156 Z" fill="#f6ebe6" />
+        <!-- bottom fold -->
+        <path d="M6 156 L120 80 L234 156 Z" fill="#fdf8f5" stroke="#e7c3c6" stroke-width="4" stroke-linejoin="round" />
+        <!-- top flap -->
+        <path d="M6 6 L120 92 L234 6 Z" fill="#e8b6c4" stroke="#d99fae" stroke-width="3" stroke-linejoin="round" />
+      </g>
+      <rect x="6" y="6" width="228" height="150" rx="10" fill="none" stroke="#c46f78" stroke-width="7" />
+      <!-- heart seal, centred on the flap tip -->
+      <path d="M120 112 C102 99 96 88 101 80 C106 72 116 73 120 81 C124 73 134 72 139 80 C144 88 138 99 120 112 Z"
+        fill="#cf4456" stroke="#b8344a" stroke-width="2" stroke-linejoin="round" />
+      <ellipse cx="110" cy="84" rx="4" ry="2.5" fill="#fff" opacity=".45" transform="rotate(-30 110 84)" />
+    </svg>
+    <p class="label"><span class="red">❤</span> <span id="label-text"></span> <span class="red">❤</span></p>
+
+    <div id="bow-area">
+      <svg id="bow" viewBox="0 0 220 110">
+        <path d="M14 70 Q110 0 206 70" stroke="#b07a3c" stroke-width="10" fill="none" stroke-linecap="round" />
+        <polyline id="string" points="14,70 110,70 206,70" stroke="#8a5a2b" stroke-width="3" fill="none" />
+        <rect x="94" y="28" width="32" height="16" rx="6" fill="#7a4f27" />
+      </svg>
+    </div>
+    <p class="hint" id="hint"></p>
+  </div>
+  <div id="arrow"><span class="tip"></span><span class="shaft"></span><span class="fletch"></span></div>
+
+  <div id="window" class="hidden">
+    <div class="titlebar">
+      <span>LOVE</span>
+      <div class="ctrls"><i>_</i><i>□</i><i>×</i></div>
+    </div>
+    <div class="hearts-bar">❤ <b></b> ❤ <b></b> ❤</div>
+    <div class="content">
+      <h1 id="title"></h1>
+      <div class="cat-wrap">
+        <canvas id="cat" width="16" height="14"></canvas>
+      </div>
+      <div id="buttons">
+        <button id="yes" class="btn">YES</button>
+        <button id="no" class="btn">NO</button>
+      </div>
+      <p id="final" class="hidden"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
